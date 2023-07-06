@@ -8,6 +8,8 @@ Solution: https://stackoverflow.com/a/68166357/2106941
 arch -x86_64 rm -rf Podfile.lock      
 arch -x86_64 pod install --repo-update
 
+<!-- Build runner to generate files -->
 dart run build_runner watch
 
+<!-- Check existing keytool SHA in machine -->
 keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android

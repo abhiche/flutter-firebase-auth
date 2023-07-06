@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_template/src/firebase_options.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -10,11 +11,7 @@ class AuthRepository {
   final FirebaseAuth _auth;
 
 // TODO: This should be refactored to be passed as a dependency
-  GoogleSignIn googleSignIn = GoogleSignIn(
-    scopes: <String>[
-      'email',
-    ],
-  );
+  GoogleSignIn googleSignIn = GoogleSignIn(scopes: <String>['email']);
 
   Stream<User?> authStateChanges() => _auth.authStateChanges();
   User? get currentUser => _auth.currentUser;
@@ -43,7 +40,7 @@ class AuthRepository {
   }
 
   Future<void> signOut() {
-    // googleSignIn.disconnect();
+    googleSignIn.disconnect();
     return _auth.signOut();
   }
 }

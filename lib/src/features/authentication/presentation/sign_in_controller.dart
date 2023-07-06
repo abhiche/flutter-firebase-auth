@@ -13,4 +13,10 @@ class SignInScreenController extends _$SignInScreenController {
     state = const AsyncLoading();
     state = await AsyncValue.guard(authRepository.signInAnonymously);
   }
+
+  Future<void> signInWithGoogle() async {
+    final authRepository = ref.read(authRepositoryProvider);
+    state = const AsyncLoading();
+    state = await AsyncValue.guard(authRepository.signInWithGoogle);
+  }
 }

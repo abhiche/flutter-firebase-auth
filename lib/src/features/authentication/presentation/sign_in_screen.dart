@@ -26,10 +26,10 @@ class SignInScreen extends ConsumerWidget {
                 ? null
                 : () => ref
                     .read(signInScreenControllerProvider.notifier)
-                    .signInAnonymously(),
+                    .signInWithGoogle(),
             child: state.isLoading
                 ? const CircularProgressIndicator()
-                : const Text('Sign in anonymously'),
+                : const Text('Sign in with google'),
           ),
         ),
       ),

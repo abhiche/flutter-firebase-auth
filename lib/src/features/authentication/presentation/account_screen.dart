@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/src/features/authentication/presentation/account_screen_controller.dart';
 import 'package:flutter_template/src/utils/async_value_ui.dart';
 
-/// Simple account screen showing some user info and a logout button.
+/// Simple account screen showing welcome message and a logout button.
 class AccountScreen extends ConsumerWidget {
   const AccountScreen({Key? key}) : super(key: key);
 

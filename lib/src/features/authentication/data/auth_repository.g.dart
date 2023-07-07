@@ -20,7 +20,21 @@ final firebaseAuthProvider = Provider<FirebaseAuth>.internal(
 );
 
 typedef FirebaseAuthRef = ProviderRef<FirebaseAuth>;
-String _$authRepositoryHash() => r'3871275ded2762a0e529629be71e890bfd3bd7ad';
+String _$googleSignInHash() => r'91def8f3f956a92d9e8aad4f5688d769e9de671a';
+
+/// See also [googleSignIn].
+@ProviderFor(googleSignIn)
+final googleSignInProvider = Provider<GoogleSignIn>.internal(
+  googleSignIn,
+  name: r'googleSignInProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$googleSignInHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef GoogleSignInRef = ProviderRef<GoogleSignIn>;
+String _$authRepositoryHash() => r'd194f2ebd7a0ee2654292b86193bf77c2d8f59a2';
 
 /// See also [authRepository].
 @ProviderFor(authRepository)
